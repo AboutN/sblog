@@ -44,3 +44,9 @@ func (m *Category) Edit(param Params) (result bool) {
 	result = true
 	return
 }
+
+// QueryAll 查询所有的分类
+func (m *Category) QueryAll() (result []*Category) {
+
+	return
+}

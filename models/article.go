@@ -49,5 +49,12 @@ func (m *Article) Get() (result *Article) {
 
 // Edit 编辑文章
 func (m *Article) Edit(param Params) (result bool) {
+	err := conn.Updates(param).Error
+	if err != nil {
+		result = false
+		log.Error().Err(err)
+		return
+	}
+	result = true
 	return
 }

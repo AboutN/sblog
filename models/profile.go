@@ -19,8 +19,8 @@ type Profile struct {
 }
 
 // Create 创建
-func (m *Profile) Create() (result bool) {
-	err := conn.Create(m).Error
+func (m *Profile) Create() (result bool, err error) {
+	err = conn.Create(m).Error
 	if err != nil {
 		result = false
 		log.Error().Err(err)
@@ -31,8 +31,8 @@ func (m *Profile) Create() (result bool) {
 }
 
 // Get 获取基本信息
-func (m *Profile) Get() (result *Profile) {
-	err := conn.First(result).Error
+func (m *Profile) Get() (result *Profile, err error) {
+	err = conn.First(result).Error
 	if err != nil {
 		result = nil
 		log.Error().Err(err)
