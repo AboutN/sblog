@@ -6,8 +6,16 @@
 ``` bash
 ├───config			// 配置信息读取
 ├───controllers		// 控制器
-├───models			// 数据模型
-├───routes			// 路由配置
-├───services		// 业务处理, 由于不复杂,对于数据库的操作也在这里.
-└───templates		// 页面模板, 没有使用前后端分离的方式. 
+├───entities		// View实体
+├───log				// 日志
+├───models			// 数据库模型 , 模型的操作也在这里, 算是充血模型
+├───routes			// 路由
+│   └───middleware	// 中间件
+├───services		// 业务服务
+├───templates		// 模板go源码
+├───themes			// 主题
+│   └───default		// 默认主题
+│       ├───assets	// 静态资源文件
+│       └───layout	// 模板文件
+└───utils
 ```
