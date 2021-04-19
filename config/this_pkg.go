@@ -20,6 +20,8 @@ var (
 	DBPath   string // 数据库文件路径
 )
 
+const ConfigFile = "app.conf"
+
 // 则使用默认配置信息
 func Init() {
 	viper.SetConfigType("yaml")
