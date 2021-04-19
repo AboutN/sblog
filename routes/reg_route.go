@@ -2,15 +2,21 @@ package routes
 
 import (
 	"sblog/controllers"
+	"sblog/routes/middleware"
 
 	"github.com/gin-gonic/gin"
 )
 
 func RegRout(router *gin.Engine) {
-	// 系统初始化
-	router.GET("/install", controllers.Step1)
-	// 初始化完成
-	router.GET("/finish", controllers.Step2)
+
+	installd := router.Group("", middleware.IsInstalld)
+	{
+		// 系统初始化
+		installd.GET("/install", controllers.Step1)
+		installd.POST("/install", controllers.Step1Post)
+		// 初始化完成
+		installd.GET("/finish", controllers.Step2)
+	}
 
 	// 注册
 	// router.GET("/registry")
