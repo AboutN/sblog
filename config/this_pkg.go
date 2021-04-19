@@ -31,7 +31,7 @@ func Init() {
 
 	BlogName = viper.GetString("BlogName")
 	Port = viper.GetString("Port")
-	Theme = viper.GetString("Themes")
+	Theme = viper.GetString("Theme")
 	PageSize = viper.GetInt("PageSize")
 	DBPath = viper.GetString("DBPath")
 }

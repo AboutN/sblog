@@ -10,5 +10,6 @@ import (
 
 func SetStaticDir(route *gin.Engine) {
 	dir := fmt.Sprintf("themes/%s/assets", config.Theme)
-	route.Static("/theme", dir)
+
+	route.Static("/assets", dir)
 }
