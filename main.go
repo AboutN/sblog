@@ -40,6 +40,7 @@ type WebServer struct {
 
 func (ws *WebServer) Run() {
 	ws.engine.Run(":" + config.Port)
+
 }
 
 func (ws *WebServer) Init() {
