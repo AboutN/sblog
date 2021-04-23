@@ -28,10 +28,10 @@ func RegRout(router *gin.Engine) {
 	router.GET("/manage", controllers.Manage)
 
 	// RSS
-	router.GET("/rss")
+	router.GET("/rss", nil)
 
 	// 加载更多文章
-	router.GET("/next/:n")
+	router.GET("/next/:n", nil)
 
 	// 未知路径
 	router.NoRoute()
@@ -39,20 +39,20 @@ func RegRout(router *gin.Engine) {
 	manage := router.Group("")
 	{
 		// 首页
-		manage.GET("/")
+		manage.GET("/", nil)
 		// 分类列表
-		manage.GET("/tag")
+		manage.GET("/tag", nil)
 		// 添加分类
-		manage.GET("/tag/add")
+		manage.GET("/tag/add", nil)
 		// 个人信息
-		manage.GET("/personal")
+		manage.GET("/personal", nil)
 
 		// 写博客
-		manage.GET("/write/*id")
+		manage.GET("/write/*id", nil)
 		// 博文
-		manage.GET("/p/:id")
+		manage.GET("/p/:id", nil)
 		// 删除
-		manage.GET("/del/:id")
+		manage.GET("/del/:id", nil)
 	}
 
 }
