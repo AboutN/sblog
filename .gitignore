@@ -1,2 +1,3 @@
 go.sum
 sblog.db
+logs/**/*
