@@ -31,7 +31,7 @@ func GenID() string {
 	for {
 		id, err := Generate()
 		if err != nil {
-			log.Error().Err(err)
+			log.Error().Msg(err.Error())
 			panic(err)
 		}
 		if !strings.ContainsAny(id, "-_") && len(id) == 9 {

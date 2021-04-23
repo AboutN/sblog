@@ -18,7 +18,7 @@ func Init() {
 		},
 	})
 	if err != nil {
-		log.Error().AnErr("dbconn", err)
+		log.Error().Msg(err.Error())
 		panic("err: 数据库连接失败")
 	}
 	db.AutoMigrate(&Profile{})

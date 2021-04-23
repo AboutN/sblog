@@ -27,7 +27,7 @@ func Init() {
 	viper.SetConfigType("yaml")
 	err := viper.ReadConfig(bytes.NewBuffer(defconf))
 	if err != nil {
-		log.Error().AnErr("confload", err)
+		log.Error().Msg(err.Error())
 		panic(err)
 	}
 

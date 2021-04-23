@@ -23,7 +23,7 @@ func (m *Article) Create() (result bool) {
 	err := conn.Create(m).Error
 	if err != nil {
 		result = false
-		log.Error().Err(err)
+		log.Error().Msg(err.Error())
 		return
 	}
 	result = true
@@ -36,7 +36,7 @@ func (m *Article) Get() (result *Article) {
 	err := db.Error
 	if err != nil {
 		result = nil
-		log.Error().Err(err)
+		log.Error().Msg(err.Error())
 		return
 	}
 	if db.RowsAffected == 0 {
@@ -52,7 +52,7 @@ func (m *Article) Edit(param Params) (result bool) {
 	err := conn.Updates(param).Error
 	if err != nil {
 		result = false
-		log.Error().Err(err)
+		log.Error().Msg(err.Error())
 		return
 	}
 	result = true

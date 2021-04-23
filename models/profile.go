@@ -23,7 +23,7 @@ func (m *Profile) Create() (result bool, err error) {
 	err = conn.Create(m).Error
 	if err != nil {
 		result = false
-		log.Error().Err(err)
+		log.Error().Msg(err.Error())
 		return
 	}
 	result = true
@@ -35,7 +35,7 @@ func (m *Profile) Get() (result *Profile, err error) {
 	err = conn.First(result).Error
 	if err != nil {
 		result = nil
-		log.Error().Err(err)
+		log.Error().Msg(err.Error())
 		return
 	}
 	return
@@ -46,7 +46,7 @@ func (m *Profile) Edit(param Params) (result bool) {
 	err := conn.Updates(param).Error
 	if err != nil {
 		result = false
-		log.Error().Err(err)
+		log.Error().Msg(err.Error())
 		return
 	}
 	result = true

@@ -10,18 +10,18 @@ import (
 var log zerolog.Logger
 
 func Init() {
+
 	lf, err := rotatelogs.New(
-		"log/access_%Y%m%d.log",
-		rotatelogs.WithLinkName("log/access.log"),
+		"logs/access_%Y%m%d.log",
+		rotatelogs.WithLinkName("logs/access.log"),
 		rotatelogs.WithRotationCount(31),
 	)
 	if err != nil {
 		fmt.Println(err)
 		panic("日志工具初始化失败")
 	}
-	log = zerolog.New(lf).
-		Level(zerolog.InfoLevel).
-		With().Logger()
+	log = zerolog.New(lf).Level(zerolog.InfoLevel).With().Logger()
+
 }
 
 func Info() *zerolog.Event {
